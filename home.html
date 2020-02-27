@@ -1,29 +1,43 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Home</title>
-<link type="text/css" rel="stylesheet" href="shringar.css" />
-</head>
-    <body bgcolor="grey">
- 
-<div id="wrapper">
-    <div id="menu">
-         <center> <b><p class="welcome">Welcome To The Web Chat</p></b></center> 
-    
+  <head>
+    <title>Home</title>
+    <link type="text/css" rel="stylesheet" href="shringar.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  </head>
+  <body bgcolor="grey">
+    <div id="wrapper">
+        <div id="greet"></div>
+        <div id="menu">
+             <center> 
+                <b>
+                  <p class="welcome">
+                    Welcome To The Web Chat
+                  </p>
+                </b>
+              </center> 
+        </div>
+        <center> 
+          <div id="chatbox"></div>
+        </center>
+        <center>  
+          <form name="message" action="message.php" method="post">
+            <input name="usermsg" type="text" id="usermsg" size="70" />
+            <input name="submitmsg" type="submit"  id="submitmsg" value="Send" />
+          </form>
+        </center>
     </div>
-     
-    <center> <div id="chatbox">
-        
-        </div></center>
-     
-  <center>  <form name="message" action="">
-        <input name="usermsg" type="text" id="usermsg" size="70" />
-        <input name="submitmsg" type="submit"  id="submitmsg" value="Send" />
-      </form></center>
-</div>
-        <p class="logout"><a id="exit" href="#"><center>Exit Chat</center></a></p>
-<script type="text/javascript" src="javasource"></script>
-<script type="text/javascript">
-</script>
-</body>
+    <p class="logout"> 
+        <a id="exit" href="#">
+          <center>
+            Exit Chat
+          </center>
+        </a>
+    </p>
+  </body>
+  <script type="text/javascript">
+    var name = prompt("Please enter your name", "Harry Potter");
+    var p = document.getElementById("greet");
+    p.appendChild(document.createTextNode('Hello,'+name));
+  </script>
 </html>
