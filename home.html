@@ -7,7 +7,10 @@
   </head>
   <body bgcolor="grey">
     <div id="wrapper">
-        <div id="greet"></div>
+        <div id="greet" name="name"></div>
+        <?
+          session_start();
+        ?>
         <div id="menu">
              <center> 
                 <b>
@@ -36,8 +39,16 @@
     </p>
   </body>
   <script type="text/javascript">
-    var name = prompt("Please enter your name", "Harry Potter");
-    var p = document.getElementById("greet");
-    p.appendChild(document.createTextNode('Hello,'+name));
+    function k(){
+      var name = prompt("Please enter your name", "Harry Potter");
+      var p = document.getElementById("greet");
+      if(name == null){
+        k();
+      }
+      else{
+        p.appendChild(document.createTextNode('Hello,'+name));
+      }
+    }
+    k();
   </script>
 </html>
