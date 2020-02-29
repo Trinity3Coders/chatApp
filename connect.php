@@ -1,11 +1,4 @@
-<?php
-		$dbhost = 'localhost';
-		$dbname = 'chat';
-		$dbuser = 'root';
-		$dbpass = '';
-		try {
-			$db = new PDO("mysql:dbhost=$dbhost;dbname=$dbname","$dbuser","$dbpass"); 
-		} catch (PDOException $e) {
-			echo $e->getMessage();
-		}
+ <?php
+ 		$conn=mysqli_connect("localhost", "root", "", "chat")
+ 		or die('Unable to connect to the database')
  ?>
